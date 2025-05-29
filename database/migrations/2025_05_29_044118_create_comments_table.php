@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->text('comment_content')->comment('Content of a comment.');
+            $table->timestamp('comment_date')->comment('Date of comment.')->nullable();
+            $table->string('reviewer_name')->comment('Name of reviewer.');
+            $table->string('reviewer_email')->comment('Email of reviewer.');
+            $table->boolean('is_hidden')->comment('Visibility of a comment.')->default(false);
             $table->timestamps();
         });
     }
