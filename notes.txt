@@ -1,0 +1,3 @@
+//command for creating a model w/ migration
+php artisan make:model Post -m 
+
